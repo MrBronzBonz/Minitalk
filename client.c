@@ -6,19 +6,22 @@
 /*   By: ebronzin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 08:51:53 by ebronzin          #+#    #+#             */
-/*   Updated: 2023/03/15 12:09:05 by ebronzin         ###   ########.fr       */
+/*   Updated: 2023/03/15 12:47:19 by ebronzin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void	args_check(int argc, char **argv)
+int	args_check(int argc, char **argv)
 {
 	int	i;
 
 	i = 0;
 	if (argc != 3)
+	{
 		ft_printf("Invalid number of arguments");
+		return (0);
+	}
 	while (argv[1][i])
 	{
 		if (!ft_isdigit(argv[1][i++]))
@@ -32,6 +35,7 @@ void	args_check(int argc, char **argv)
 		ft_printf("Invalid message (empty)");
 		exit(0);
 	}
+	return (1);
 }
 
 void	send_msg(pid_t sv_pid, char *msg)
@@ -84,7 +88,8 @@ int	main(int argc, char **argv)
 {
 	pid_t		sv_pid;
 
-	args_check(argc, argv);
+	if (!(args_check(argc, argv)))
+		return (0);
 	sv_pid = ft_atoi(argv[1]);
 	config_signals();
 	send_msg(sv_pid, argv[2]);
