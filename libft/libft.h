@@ -6,14 +6,16 @@
 /*   By: ebronzin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 08:58:23 by ebronzin          #+#    #+#             */
-/*   Updated: 2023/01/25 10:40:08 by ebronzin         ###   ########.fr       */
+/*   Updated: 2023/03/15 10:08:40 by ebronzin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <unistd.h>
-# include <stdlib.h>
+
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdarg.h>
 
 typedef struct s_list
 {
@@ -21,6 +23,25 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+//ptintf library - itoa che giá é in libft
+int		ft_printf(const char *token, ...);
+//int		ft_organize(va_list list, const char format);
+int		ft_putchar(char ch);
+int		ft_putstr(char *c);
+int		len_ptr(uintptr_t nb);
+void	ft_put_ptr(uintptr_t nb);
+int		ft_putptr(uintptr_t ptr);
+int		esa_len(unsigned int num);
+void	ft_put_esa(unsigned int num, const char format);
+int		ft_putesadecimal(unsigned int num, const char format);
+int		ft_putunsnumbr(unsigned int nb);
+int		ll_length(long long nb, int base);
+char	*ft_char(char *s, unsigned int number, int len);
+int		ft_len(int n);
+int		ft_putnumbr(int n);
+
+
+//libft originale
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
