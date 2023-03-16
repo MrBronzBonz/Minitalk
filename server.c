@@ -25,7 +25,7 @@ void	handle_sigusr(int signum, siginfo_t *info, void *ucontent)
 	bit_itr--;
 	if (bit_itr < 0 && c)
 	{
-		ft_putchar_fd(c, STDOUT_FILENO);
+		write(1, &c, 1);
 		c = 0;
 		if (kill(info->si_pid, SIGUSR2) == -1)
 			ft_printf("Server failed to send SIGUSR2");
