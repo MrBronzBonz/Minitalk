@@ -1,0 +1,21 @@
+YOU WHO ARE READING AND CAN'T UNDERSTAND ITALIAN, COPY AND TRANSLATE IT.
+
+La libreria signal.h include molte funzioni utilizzate per gestire i segnali in un programma. Alcune delle funzioni più comuni sono:
+
+- signal(): utilizzata per assegnare una funzione di gestione a un segnale specifico. Ad esempio, signal(SIGINT, my_handler) assegna la funzione my_handler al segnale SIGINT.
+
+- kill(): utilizzata per inviare un segnale a un processo specifico. Ad esempio, kill(pid, SIGTERM) invia il segnale SIGTERM al processo con il PID pid.
+
+- sigaction(): utilizzata per modificare il comportamento di un segnale specifico. Ad esempio, sigaction(SIGINT, &new_action, &old_action) imposta la nuova azione new_action per il segnale SIGINT e salva l'azione precedente in old_action.
+
+- Blocco dei segnali: la funzione sigprocmask() viene utilizzata per bloccare uno o più segnali.
+
+- Sblocco dei segnali: la funzione sigprocmask() può anche essere utilizzata per sbloccare uno o più segnali.
+
+- Gestione dei segnali in sospensione: la funzione pause() sospende l'esecuzione di un programma fino a quando non viene ricevuto un segnale.
+
+- Invio di segnali: la funzione kill() viene utilizzata per inviare un segnale a un processo specifico.
+
+La libreria signal.h include anche costanti che rappresentano i diversi segnali che possono essere inviati o gestiti in un programma. Ad esempio, SIGINT rappresenta il segnale di interruzione (ad esempio, quando l'utente preme Ctrl+C in un terminale), mentre SIGTERM rappresenta un segnale di terminazione generico.
+
+In generale, la libreria signal.h fornisce un'ampia gamma di funzionalità per gestire i segnali in un programma, tra cui la possibilità di bloccare o ignorare determinati segnali, e la capacità di gestire segnali asincroni attraverso l'uso di gestori di segnali.
