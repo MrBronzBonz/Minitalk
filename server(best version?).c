@@ -35,6 +35,7 @@ void	config_signals(void)
 	struct sigaction	sa_newsig;
 
 	sa_newsig.sa_sigaction = &handle_sigusr;
+	//la funzione che segue serve a ottenere informazioni sui segnali e non é fondamentale in questo contesto, se non addirittura vietata (LOL)
 	sa_newsig.sa_flags = SA_SIGINFO;
 }
 
